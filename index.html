@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>李承泽 | 行动者 · 追问者 · 跨学科探索者</title>
+    <title>李承泽 | 用代码传承照护的智慧，用戏剧与播客追问社会的纹理</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -81,7 +81,7 @@
             letter-spacing: -0.02em;
         }
         .hero-tagline {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: var(--primary-gold);
             font-weight: 500;
             max-width: 800px;
@@ -89,7 +89,7 @@
             line-height: 1.4;
         }
         .hero-sub {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #64748b;
             margin-top: 10px;
             font-style: italic;
@@ -141,6 +141,38 @@
             margin: 12px auto 0;
         }
 
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 8px;
+            padding: 28px;
+            border: 1px solid var(--accent-border);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(15, 23, 42, 0.08);
+            border-color: var(--primary-gold);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .card h3 { font-family: 'Noto Serif SC', serif; font-size: 1.2rem; margin-bottom: 12px; color: var(--deep-graphite); }
+        .card p { font-size: 0.88rem; color: #475569; line-height: 1.55; }
+        .card strong { color: var(--primary-gold); font-weight: 600; }
+
         /* 个人陈述样式 */
         .statement-content {
             max-width: 800px;
@@ -182,38 +214,6 @@
                 margin: 24px 0 12px 0;
             }
         }
-
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(8px);
-            border-radius: 8px;
-            padding: 28px;
-            border: 1px solid var(--accent-border);
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 35px rgba(15, 23, 42, 0.08);
-            border-color: var(--primary-gold);
-            background: rgba(255, 255, 255, 0.9);
-        }
-        .badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 12px;
-            display: block;
-        }
-        .card h3 { font-family: 'Noto Serif SC', serif; font-size: 1.2rem; margin-bottom: 12px; color: var(--deep-graphite); }
-        .card p { font-size: 0.88rem; color: #475569; line-height: 1.55; }
-        .card strong { color: var(--primary-gold); font-weight: 600; }
 
         .timeline {
             max-width: 900px;
@@ -361,7 +361,6 @@
             color: #475569;
         }
 
-        /* 转学期望卡片 */
         .future-card {
             background: var(--tech-blue);
             border-radius: 12px;
@@ -384,12 +383,6 @@
             line-height: 1.7;
             text-align: left;
         }
-        .future-card .future-text p {
-            margin-bottom: 18px;
-        }
-        .future-card .future-text p:last-child {
-            margin-bottom: 0;
-        }
         .future-card hr { margin: 32px 0; border-color: #334155; }
         .future-card .contact-info { text-align: center; margin-top: 8px; }
 
@@ -400,32 +393,6 @@
             text-align: center;
             font-size: 0.75rem;
             letter-spacing: 0.05em;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-        }
-        .view-stats {
-            cursor: pointer;
-            color: var(--primary-gold);
-            font-weight: 600;
-            text-decoration: underline;
-            text-decoration-style: dotted;
         }
 
         @media (max-width: 768px) {
@@ -440,8 +407,7 @@
             .group-item { padding: 12px 18px; }
             .nav-links { gap: 8px; }
             .nav-links a { font-size: 0.7rem; padding: 4px 10px; }
-            .future-card { padding: 32px 24px; }
-            .future-card .future-text { font-size: 0.88rem; }
+            .grid-cards { gap: 16px; }
         }
     </style>
 </head>
@@ -464,8 +430,8 @@
 <main>
     <div class="container hero">
         <h1>李承泽</h1>
-        <div class="hero-tagline">行动者 · 追问者 · 跨学科探索者</div>
-        <div class="hero-sub">Practitioner · Inquirer · Interdisciplinary Explorer</div>
+        <div class="hero-tagline">“用代码传承照护的智慧，用戏剧与播客追问社会的纹理<br>——一位跨学科的行动者”</div>
+        <div class="hero-sub">"Passing on the wisdom of care through code, questioning the fabric of society through drama and podcasts — an interdisciplinary practitioner."</div>
         <p>📍 专业探索方向：社会学 / 戏剧研究 / 国际关系</p>
         <div class="btn-group">
             <a href="#tech" class="btn">探索 AI 项目</a>
@@ -482,24 +448,39 @@
                     <span class="badge">创始人 & 社长</span>
                     <h3>心智障碍者支持社团-薪火社</h3>
                     <p>作为创始人，带领校内最大社团（31人）与特教机构深度合作，策划并落地艺术节、工作坊等多场公益活动。从资源对接到现场执行，不仅锻炼了沟通与组织协调能力，更让我理解了公益活动如何同时为受助者和参与者创造价值。</p>
-                    <p style="margin-top: 12px;"><strong>🤝 校际联动：</strong>已与中央民族大学相关社团建立合作，共同组织陪伴心智障碍者的公益活动。</p>
+                    <p style="margin-top: 12px;"><strong>🤝 校际联动：</strong>已与中央民族大学民族学与社会学院团委青年志愿者团建立合作，共同组织陪伴心智障碍者的公益活动。</p>
                 </div>
+
                 <div class="card">
                     <span class="badge">视频号主理人 · 矩阵传播</span>
                     <h3>心智守护2025</h3>
-                    <p>跟踪采访心智障碍者“小富哥哥”，记录生活起居，定期制作视频资料，形成“视频号+公众号+美篇”的矩阵式对外宣传，加强社会的关注度。</p>
-                    <p style="margin-top: 12px;">📊 全平台浏览量：<span id="statsTrigger" class="view-stats">1.2w+</span> <span style="font-size:0.7rem;"> </span></p>
+                    <p>跟踪采访心智障碍者“小富哥哥”，记录生活起居，定期制作视频资料，形成“视频号+公众号+美篇”的矩阵式宣传，提升社会关注度。</p>
+                    <p style="margin-top: 12px;">📊 全平台浏览量：<strong>1.4w+</strong></p>
                     <p style="margin-top: 8px;">📹 关键字：<strong>心智守护2025</strong></p>
                 </div>
+
                 <div class="card">
                     <span class="badge">戏剧社 · 核心演员</span>
                     <h3>参演多部舞台剧</h3>
-                    <p>组织和参演改编剧“Antigone”，参演音乐剧“Come From Away”和话剧“Out of Order”，通过角色共情拓展情感表达力，增强团队协作，理解人性的复杂维度。</p>
+                    <p>组织和参演改编剧<em>Antigone</em>、参演音乐剧 <em>Come From Away</em> 和话剧 <em>Out of Order</em>，通过角色共情拓展情感表达力，增强团队协作，理解人性的复杂维度。</p>
                 </div>
+
+                <div class="card">
+                    <span class="badge">CTB 创新挑战赛 · 10人团队 leader</span>
+                    <h3>团队协作与领导力荣誉</h3>
+                    <p>作为10人团队leader，带领团队完成论文《情感陪伴、生活技能培养、社会融合帮扶心智障碍者的公益陪伴》，构建三重帮扶模式。</p>
+                    <p style="margin-top: 12px;">
+                        📄 全国论坛二等奖（晋级哈佛全球赛）<br>
+                        🏆 全国最佳团队协作奖<br>
+                        👑 全国最佳团队领袖奖（个人）
+                    </p>
+                    <p style="margin-top: 12px; font-size: 0.8rem; color: #64748b;">从学术研究到团队管理，这是我跨学科探索的一次完整实践。</p>
+                </div>
+
                 <div class="card">
                     <span class="badge">历史播客主理人</span>
                     <h3>《坐标系The Coordinate》</h3>
-                    <p>高中生的地缘观察笔记，关注世界历史的发展脉络，锻炼研究与叙事能力。</p>
+                    <p>高中生的地缘观察笔记，关注世界历史的发展脉络，锻炼研究与叙事能力。（喜马拉雅）</p>
                 </div>
             </div>
         </div>
@@ -527,7 +508,7 @@
                     <span class="feature-tag">📄 一键导出 · 就医/回忆录</span>
                 </div>
                 <div class="insight-quote">
-                    💡 “AI并非替代者，而是我社会理想的放大器。通过与 Gemini 深度协作，基于 Python 3.12 构建底层架构，集成 Kimi 大模型能力，将感性的照护琐碎转化为结构化的理性数据资产，让碎片化的家庭经验汇聚成守护生命的数字力量。”
+                    💡 “AI并非替代者，而是我社会理想的放大器。通过与 Gemini 深度协作，基于 Python 3.12 构建底层架构，集成 Kimi 大模型能力，把零散的、口口相传的照护经验，变成可以保存、可以检索、可以传给下一个人看的记录。”
                 </div>
                 <div style="margin-top: 20px;">
                     <a href="https://github.com/chengze2009/Mindguard-AI" target="_blank" class="btn" style="background: var(--primary-gold); border-color: var(--primary-gold);">查看 GitHub 仓库</a>
@@ -541,8 +522,12 @@
         <div class="container">
             <h2 class="section-title">学术表现与标化</h2>
             <div class="academics-grid">
-                <div class="academic-item"><span>TOEFL</span><strong>106</strong><span>R27 L25 S26 W28</span></div>
-                <div class="academic-item"><span>GPA</span><strong>4.17 / 4.3</strong><span>年级前10%</span></div>
+                <div class="academic-item">
+    <span>TOEFL</span>
+    <strong>106</strong>
+    <span>R27 L25 S26 W28 · 📄 <a href="https://mp.weixin.qq.com/s/oCWSPIPFXUTtjnu9K87CWg" target="_blank" style="color: var(--primary-gold); text-decoration: none; border-bottom: 1px dotted var(--primary-gold);">学习心得</a></span>
+</div>
+                <div class="academic-item"><span>GPA</span><strong>4.17</strong><span>年级前10%</span></div>
                 <div class="academic-item"><span>夏校</span><strong>布朗大学</strong><span>卡尔顿学院/芝加哥大学</span></div>
                 <div class="academic-item"><span>竞赛</span><strong>CTB 全国二等奖</strong><span>晋级哈佛全球赛</span></div>
             </div>
@@ -555,16 +540,16 @@
             <h2 class="section-title">研究与实践 · 从行动到理论追问</h2>
             <div class="research-grid">
                 <div class="card">
-                    <span class="badge">CTB晋级哈佛全球赛 · 全国二等奖</span>
-                    <h3>心智障碍者多维帮扶模式</h3>
+                    <span class="badge">CTB晋级哈佛全球赛 · 全国二等奖 · 最佳团队协作奖 · 最佳团队领袖奖</span>
+                    <h3>心智障碍者三重帮扶模式</h3>
                     <p><strong>论文题目：</strong>《情感陪伴、生活技能培养、社会融合帮扶心智障碍者的公益陪伴》</p>
-                    <p style="margin-top: 8px;">构建“情感陪伴—技能培养—社会融合”三维干预框架，发起心智障碍者艺术节，收集照护者叙事。项目孵化出心智守护 AI 智库。</p>
+                    <p style="margin-top: 8px;">构建“情感陪伴—技能培养—社会融合”三重帮扶模式，发起心智障碍者艺术节，收集照护者叙事。项目孵化出心智守护 AI 智库。作为10人团队leader，带领团队获得全国二等奖、最佳团队协作奖及个人最佳团队领袖奖，晋级哈佛全球赛。</p>
                 </div>
                 <div class="card">
                     <span class="badge">John Locke 论文竞赛 · 政治学组</span>
                     <h3>疫情是否使威权主义常态化？</h3>
                     <p><em>Did the pandemic normalize authoritarianism?</em></p>
-                    <p>比较不同国家的防疫政策与公民自由限制，探讨紧急权力制度化。运用施米特“例外状态”与威权韧性理论。</p>
+                    <p>探讨疫情背景下紧急权力与公民自由的关系。</p>
                     <p style="margin-top: 12px; color: var(--primary-gold); font-weight: 500;">撰写中 · 计划2026年5月提交</p>
                 </div>
             </div>
@@ -580,15 +565,15 @@
         <div class="container">
             <h2 class="section-title">个人陈述</h2>
             <div class="statement-content">
-                <p>我是一个矛盾的人。脑子里总是徜徉着各种奇思妙想，但也会一边喊苦喊累一边咬牙坚持。我一直在找“我”是谁，找一条确定的路，但总是不如意。现在想想，也许这就是成长的常态——不是找到答案，而是在寻找的过程中，慢慢成为自己。</p>
+                <p>我是一个矛盾的人。脑子里总是徜徉着各种奇思妙想，但也会一边喊苦喊累一边咬牙坚持。我一直在找“我”是谁，找一条确定的路，现在想想，也许这就是成长的常态——不是找到答案，而是在寻找的过程中，慢慢成为自己。</p>
 
                 <div class="statement-subtitle">从蛰伏到开口</div>
-                <p>很小的时候我就开始读历史书。从《史记》到《全球通史》，我沉迷于那些遥远的王朝和战争，脑子里装满了别人的兴衰成败，但这些知识并没有让我在人际交往中占到什么便宜。加上小学时候体形偏胖，被同学欺负，心里很不是滋味。那时候我不太说话，也不太敢说话。</p>
+                <p>很小的时候我就开始读历史书。从《史记》到《极简世界史》，我沉迷于那些遥远的王朝和战争，脑子里装满了别人的兴衰成败，但这些知识并没有让我在人际交往中占到什么便宜。加上小学时候体形偏胖，被同学欺负，心里很不是滋味。那时候我不太说话，也不太敢说话。</p>
                 <p>现在回想，也许那段时间是在蛰伏。</p>
-                <p>初二那年，家里人决定给我换个环境。转学之后，我发现自己变了。英语能轻松考到班里前几名，接受过的播音主持和朗诵训练也开始派上用场——说话有中气、有底气，台风稳得住。第一个学期，我就站上了舞台主持学校大型活动，参加演讲比赛。慢慢地，我不再是那个缩在角落里的小孩了。</p>
+                <p>初二那年，家里人决定给我换个环境。转学前的那个暑假，我疯狂的练跑步，我发现自己慢慢蜕变了，长高了，变瘦了，在老师认可、信任下，接受过的播音主持和朗诵训练开始派上了用场。第一个学期，我就站上了舞台主持学校大型活动，参加辩论比赛。慢慢地，我不再是那个缩在角落里的小孩了。</p>
                 <p>但真正的转折发生在初三下学期。那一年，我拿着雅思6分的成绩，毅然从体制内转到了国际路线。不是因为原来的路不好走，是我隐约觉得，有一条更适合我的路，我应该去试一试。</p>
                 <p>做出这个选择的人，和后来坐在阳光下听歌、在舞台上成为别人的人，是同一个人。只是前者需要勇气，后者需要诚实。</p>
-                <p>我喜欢戴着有线耳机听歌，古典和摇滚轮流播放，然后坐在阳光下的草坪上读书。偶尔写点东西，用三两句话宽慰自己。喜欢戏剧表演，站在舞台上的时候，我的表演型人格终于可以光明正大地释放。参演"Antigone"、"Come From Away"、"Out of Order"——不是为了拿奖，是因为在舞台上，我可以成为另一个人，然后用那个人的眼睛看世界。</p>
+                <p>我喜欢戴着有线耳机听歌，古典和摇滚轮流播放，然后坐在阳光下的草坪上读书。偶尔写点东西，用三两句话宽慰自己。喜欢戏剧表演，站在舞台上的时候，我可以成为另一个人，然后用那个人的眼睛看世界。参演 <em>Antigone</em>、<em>Come From Away</em>、<em>Out of Order</em>——不是为了拿奖，是因为在舞台上，我可以换一种视角理解人、理解选择、理解命运。</p>
                 <p>我对历史、政治、哲学有天然的喜欢，经常关注国际形势。但渐渐地，我意识到自己的视角总是不自觉地以中国为中心；于是前一阵子，我特意买了一张世界地图挂在宿舍里，我会找到那一个个国家的位置，希望自己能从不同的角度观察世界。这份好奇也催生了我的历史播客《坐标系The Coordinate》——用高中生的视角，聊地缘政治。听起来很严肃对吧？但我也会花时间打游戏，手游和端游都玩。我觉得这不矛盾——游戏里也有世界秩序、资源分配和阵营博弈，只是换了一种方式理解。</p>
 
                 <div class="statement-subtitle">从“看见”到“坐不住”</div>
@@ -599,37 +584,37 @@
                 <p>这个问题让我坐不住。</p>
 
                 <div class="statement-subtitle">从“传播”到“沉下来”</div>
-                <p>于是，我创办了心智障碍者关怀社团"薪火社"，从一个人到三十一个人，成了校内规模最大的社团。我们和特教机构合作，办了艺术节、工作坊。后来我又联动中央民族大学的社团，把活动从校内做到校外。</p>
-                <p>我开了视频号"心智守护2025"，持续记录小富哥哥的生活。全平台浏览量超过一万两千次。说实话，看到这个数字的时候，我是高兴的。但高兴完之后，我问了自己一个问题：然后呢？我还能为他们做些什么？</p>
+                <p>于是，我创办了心智障碍者关怀社团“薪火社”，从一个人到三十一个人，成了校内规模最大的社团。我们和特教机构合作，办了艺术节、关怀工作坊。后来我又联动中央民族大学民族学与社会学院团委青年志愿者团，把活动从校内做到校外。</p>
+                <p>我开了视频号“心智守护2025”，持续记录小富哥哥的生活。全平台浏览量超过一万四千次。说实话，看到这个数字的时候，我是高兴的。但高兴完之后，我问了自己一个问题：然后呢？我还能为他们做些什么？</p>
                 <p>那一刻我意识到：传播是重要的，但它只是第一步。如果我只是停留在“让大家知道这件事”，那我其实还没有真正触及他们最核心的痛点。</p>
-                <p>我需要沉下来。不是做一个旁观者，而是做一个动手的人，我要用科技的手段把照护的经验沉淀下来。。</p>
+                <p>我需要沉下来。不是做一个旁观者，而是做一个动手的人，我要用科技的手段把照护的经验沉淀下来。</p>
 
-                <div class="statement-subtitle">从“文科生”到“Vibe Coding”</div>
-                <p>文科生对编程有着天然的神秘感和抗拒，我也不例外。命令行、环境变量、依赖冲突——这些东西对我来说像另一个世界的语言，但内驱力来了，我决定试试看。</p>
+                <div class="statement-subtitle">从“人文叙事”到“Vibe Coding”</div>
+                <p>我原本对编程有着天然的神秘感和抗拒。命令行、环境变量、依赖冲突——这些东西对我来说像另一个世界的语言，但内驱力来了，我决定试试看。</p>
                 <p>在Gemini的协助下，我开始尝试开发程序。Gemini非常有耐心——正如心智障碍者希望别人那样对待他们一样。它不厌其烦地回答我那些最最基础的问题，比如如何在Mac上启动terminal。</p>
-                <p>当我自信满满地打开python.org，选择了Python 3.13，开发到三分之一才发现兼容性太差，代码根本跑不起来，只能推倒重来。说实话，那一下挺挫败的——明明Gemini提示过我；我骂了自己一声真蠢，然后重新从配置3.12环境起步。这一次我不再莽撞，而是一步一步来：从提示词调优，到接入大模型API实现长文本语义理解。每一段成功的代码，都是反复调试的结果。</p>
+                <p>当我自信满满地打开python.org，选择了Python 3.13，开发到三分之一才发现兼容性太差，代码根本跑不起来，只能推倒重来。说实话，那一下挺挫败的——明明Gemini提示过我；我骂了自己一声“真蠢”，然后重新从配置3.12环境起步。这一次我不再莽撞，而是一步一步来：从提示词调优，到接入大模型API实现长文本语义理解。每一段成功的代码，都是反复调试的结果。</p>
                 <p>在解决“最后一公里”的开箱即用问题时，我反复调试，手指和手腕快要抽筋。从开始尝试到验证、封装、上线，我看到了5次凌晨一点。最终，我在GitHub上发布了基于MIT协议的开源版本——心智守护AI智库。</p>
-                <p>不过，我非常清楚，这个版本的能力还只限于“能跑起来”，还局限在文字输入。将来有没有更充满人文关怀的方式来体现科技的温度？我的探索之路还很长。站在高兴背后的那个困惑，我自己能感受到。</p>
+                <p>不过，我非常清楚，这个版本的能力还只限于“能跑起来”，还局限在文字输入。将来有没有更充满人文关怀的方式来体现科技的温度？道阻且长，但我将上下求索，开得一条路来。伫立在高兴背后的困惑，我自己能感受到。</p>
 
                 <div class="statement-subtitle">韧性迁移</div>
-                <p>这5天的高强度攻坚，让我意识到一件事：我在代码世界里面对成百上千条报错时的冷静与从容，其实来自那段从雅思到托福，从34分到106分的经历。那段时间我学会了一件事：低谷不是终点，而是重新理解规则的起点。面对陌生的逻辑，不抱怨，拆解它、适应它、战胜它。这套心法，在Vibe Coding面前同样适用。</p>
-                <p>面对从社会学叙事向算法逻辑切换时的“语感障碍”，我忍住了没有止步于理论，而是以“行动主义者”的姿态，将碎片化的照护碎语转化为可量化的数字资产。</p>
-                <p>这种从“人文感性”向“技术理性”的跨越，对我而言，不仅是对自我边界的又一次打破，更是作为一名社会创新者对“生命守护”最硬核的浪漫回应。虽然，在此期间，我经历过很多次的大喊和摔鼠标。</p>
+                <p>这5天的高强度攻坚，让我意识到一件事：我在代码世界里面对成百上千条报错时的冷静与从容，其实来自那段从雅思到托福，用十个月从34分到106分的经历。那段时间我学会了一件事：低谷不是终点，而是重新理解规则的起点。面对陌生的逻辑，不抱怨，拆解它、适应它、战胜它。这套心法，在Vibe Coding面前同样适用。</p>
+                <p>面对从社会学叙事向算法逻辑切换时的“语感障碍”，我忍住了没有止步于理论，而是以“行动主义者”的姿态，把那些零散的、口口相传的照护经验，变成可以保存、可以检索、可以传给下一个人看的记录。</p>
+                <p>从读历史、演戏剧，到写代码、做程序。这一步跨过来之后我发现，人文和技术不是两个世界——它们都在回答同一个问题：怎么让一个人的生活变得好一点。书上得来终觉浅，绝知此事中间经历过了很多次的沮丧、大喊和摔鼠标。</p>
 
                 <div class="statement-subtitle">从“行动”到“追问”</div>
                 <p>做了这么多之后，我开始追问一个更大的问题：为什么这些家庭只能靠自己？资源是怎么分配的？制度是怎么回应的？谁的声音被听见了，谁的声音被忽略了？</p>
-                <p>这个问题我没办法用代码回答，也没办法用一场活动回答。它需要更系统的思考。</p>
+                <p>这个问题我没办法用代码回答，也没办法用一场活动回答。</p>
                 <p>在戏剧舞台上，我一次次成为别人，然后用别人的眼睛反观自己。</p>
-                <p>在CTB竞赛中，我作为10人团队的leader，完成了论文《情感陪伴、生活技能培养、社会融合帮扶心智障碍者的公益陪伴》，构建了三维干预框架，获得了全国二等奖，晋级哈佛全球赛。</p>
+                <p>在CTB竞赛中，我作为10人团队的leader，完成了论文《情感陪伴、生活技能培养、社会融合帮扶心智障碍者的公益陪伴》，获得了全国二等奖，全国最佳团队协作和全国最佳团队领袖奖，晋级哈佛全球赛。</p>
                 <p>在John Locke论文竞赛中，我选择了政治学组。同时，我准备在播客《坐标系The Coordinate》里持续梳理地缘政治的脉络——所有的这些过程，都是我对这个问题的又一次追问。</p>
 
                 <div class="statement-subtitle">为什么是现在？为什么是这里？</div>
                 <p>我一直在找“确定性”——想知道自己适合什么、该往哪里走。但现实总是告诉我：确定性不存在。你只能一边试，一边调整。</p>
                 <p>我希望转学到北师大实验国际部，不是因为它能给我一个确定的答案，而是因为它能提供与我的行动方式高度契合的系统支持。</p>
-                <p>实验国际部"学生主导、教师指导"的自主课程模式，恰好契合我发起项目、独立探索的习惯；通识专修课程能支撑我横跨社科与科技的跨学科兴趣；研学探究课程则可让我在学术导师指导下，把对心智障碍者的研究继续深化和升华，同时，贯穿高中生涯的"三维立体"升学指导，能为我从探索到聚焦的整个过程保驾护航、及时纠偏。</p>
+                <p>实验国际部“学生主导、教师指导”的自主课程模式，恰好契合我发起项目、独立探索的习惯；通识专修课程能支撑我横跨社科与科技的跨学科兴趣；研学探究课程则可让我在学术导师指导下，把对心智障碍者的研究继续深化和升华，同时，贯穿高中生涯的“三维立体”升学指导，能为我从探索到聚焦的整个过程保驾护航、及时纠偏。</p>
                 <p>我也期待加入模拟联合国社团继续追问国际关系议题，参与音乐剧社延续舞台热情。66个学术社团和72个体艺公益社团构成的生态，能让我在行动和追问之间找到更扎实的连接点。</p>
                 <p>我想继续做我的AI项目，继续做播客，继续站上舞台，然后在阳光下的草坪上，戴着耳机，读一本无关紧要的书。</p>
-                <p>这就是我。一个还在寻找自己的人，一个偶尔偷懒但从不放弃的人，一个从“被看见”到“沉下来”再到“追问为什么”的人，一个用代码写过浪漫的人。</p>
+                <p>这就是我。一个一直在找自己的人，一个偶尔偷懒但不放弃的人，一个从未停止过思考与行动的人，一个尝试用代码写出浪漫的人。</p>
             </div>
         </div>
     </section>
@@ -642,7 +627,7 @@
         </div>
     </section>
 
-    <!-- 7. 转学期望 · 为何选择北师大实验国际部 -->
+    <!-- 7. 转学期望 -->
     <section id="future" style="border-bottom: none;">
         <div class="container">
             <div class="future-card">
@@ -665,46 +650,28 @@
 <footer>
     <div class="container">
         <p>© 2026 李承泽 · 以人文共情发问，以技术行动作答</p>
-        <p style="margin-top: 10px; opacity: 0.6;">Practitioner · Inquirer · Interdisciplinary Explorer</p>
+        <p style="margin-top: 10px; opacity: 0.6;">Passing on the wisdom of care through code, questioning the fabric of society through drama and podcasts — an interdisciplinary practitioner.</p>
     </div>
 </footer>
 
-<div id="statsModal" class="modal">
-    <img class="modal-content" id="statsImage" alt="浏览量截图">
-</div>
-
 <script>
-    const modal = document.getElementById('statsModal');
-    const modalImg = document.getElementById('statsImage');
-    const trigger = document.getElementById('statsTrigger');
-    const screenshotPath = 'images/stats_screenshot.jpg';
-    if (trigger) {
-        trigger.onclick = function() {
-            modal.style.display = 'flex';
-            modalImg.src = screenshotPath;
-        };
-    }
-    modal.onclick = function() {
-        modal.style.display = 'none';
-    };
-
     // 时间线数据
     const monthGroups = [
         { month: "2025.03", events: [{ title: "转学到海淀凯文", desc: "从雅思6.0转入托福体系，开启新阶段" }] },
-        { month: "2025.06", events: [{ title: "开始心智障碍者志愿活动", desc: "初次接触心智障碍者关怀领域" }] },
-        { month: "2025.07", events: [{ title: "参演自创剧《Returning》", desc: "戏剧社核心演员，探索角色共情" }] },
+        { month: "2025.06", events: [{ title: "开始心智障碍者志愿活动", desc: "与特教机构合作，系统性了解心智障碍者关怀领域" }] },
+        { month: "2025.07", events: [{ title: "参演自创剧<em>Returning<em>", desc: "戏剧社核心演员，探索角色共情" }] },
         { month: "2025.08", events: [{ title: "托福94分", desc: "阶段性突破，进入提升期" }] },
         { month: "2025.09", events: [{ title: "创建薪火社", desc: "校内首个心智障碍者关怀社团，任社长" }, { title: "Honor Roll 证书", desc: "刚转轨国际路线即获学术荣誉" }] },
         { month: "2025.10", events: [{ title: "CTB初赛 · 10人团队 leader", desc: "组建跨年级团队，完成课题开题" }] },
         { month: "2025.11", events: [{ title: "托福92分", desc: "短暂波动，调整备考策略" }] },
         { month: "2025.12", events: [{ title: "『爱与光的交响』薪火杯艺术节", desc: "海淀凯文首届，联动多方资源" }, { title: "心智守护系列视频第一期", desc: "开始用影像记录心智障碍者故事" }] },
-        { month: "2026.01", events: [{ title: "托福103分 → 106分", desc: "10个月从34分逆袭至106分" }, { title: "作为小组队长，领导8人小组完成《Antigone》演出", desc: "戏剧社核心演出，锻炼团队协作与舞台表现力" }] },
-        { month: "2026.02", events: [{ title: "联动中央民族大学社团", desc: "筹划跨校心智障碍者关怀活动" }, { title: "心智守护第二期视频", desc: "全平台浏览量突破1.2w" }] },
-        { month: "2026.03", events: [{ title: "CTB全国决赛二等奖", desc: "晋级哈佛全球赛，论文课题获认可" }, { title: "Honor Roll 证书", desc: "持续保持学术荣誉" }, { title: "启动夏校申请", desc: "布朗大学、卡尔顿学院、芝加哥大学" }, { title: "启动 John Locke 竞赛", desc: "论文题目：Did the pandemic normalize authoritarianism?" }] },
-        { month: "2026.04", events: [{ title: "中央民族大学联合活动启动", desc: "跨校公益项目正式落地" }, { title: "心智守护AI智库上线 GitHub", desc: "Python + Kimi大模型，MIT开源协议" }, { title: "历史播客《坐标系》上线", desc: "第一期发布，探索地缘政治脉络" }, { title: "布朗大学夏校录取", desc: "卡尔顿第二志愿，芝加哥WL" }, { title: "音乐剧《Come From Away》演出", desc: "饰演角色，体验9·11背景下的人性温暖" }, { title: "话剧《Out of Order》演出", desc: "英式幽默话剧，挑战节奏感与喜剧表演" }] },
+        { month: "2026.01", events: [{ title: "托福103分 → 106分", desc: "10个月从34分逆袭至106分" }, { title: "作为小组队长，组织8人小组共同完成改编剧 <em>Antigone</em> 演出", desc: "戏剧社核心演出，锻炼团队协作与舞台表现力" }] },
+        { month: "2026.02", events: [{ title: "联动中央民族大学民族学与社会学院团委青年志愿者团", desc: "筹划跨校心智障碍者关怀活动" }, { title: "心智守护第二期视频", desc: "全平台浏览量突破1.4w" }] },
+        { month: "2026.03", events: [{ title: "CTB全国决赛二等奖 · 最佳团队协作奖 · 最佳团队领袖奖（个人）", desc: "晋级哈佛全球赛，论文课题获认可" }, { title: "Honor Roll 证书", desc: "持续保持学术荣誉" }, { title: "启动夏校申请", desc: "布朗大学、卡尔顿学院、芝加哥大学" }, { title: "启动 John Locke 竞赛", desc: "论文题目：Did the pandemic normalize authoritarianism?" }, { title: "中央民族大学联合活动启动", desc: "跨校公益项目正式落地" }] },
+        { month: "2026.04", events: [{ title: "心智守护AI智库上线 GitHub", desc: "Python + Kimi大模型，MIT开源协议" }, { title: "历史播客《坐标系The Coordinate》上线", desc: "第一期发布，探索地缘政治脉络" }, { title: "布朗大学夏校录取", desc: "卡尔顿第二志愿，芝加哥WL" }, { title: "音乐剧 <em>Come From Away</em> 演出", desc: "饰演角色，体验9·11背景下的人性温暖" }, { title: "话剧 <em>Out of Order</em> 演出", desc: "英式幽默话剧，挑战节奏感与喜剧表演" }] },
         { month: "2026.05", events: [{ title: "AP考试 + John Locke论文提交", desc: "冲刺阶段，学术成果落地" }] },
         { month: "2026.07", events: [{ title: "参加布朗大学夏校", desc: "Human Rights and Humanitarianism: Past, Present, Future" }] },
-        { month: "2026.08", events: [{ title: "开始SAT学习", desc: "为下一阶段标化做准备" }] }
+        { month: "2026.08", events: [{ title: "开始SAT学习，也为新托福做铺垫", desc: "为下一阶段标化做准备" }] }
     ];
 
     const container = document.getElementById('timelineContainer');
